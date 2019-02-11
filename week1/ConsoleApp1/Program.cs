@@ -8,7 +8,6 @@ namespace ConsoleApp1
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             string n1 = Console.ReadLine();
@@ -16,6 +15,7 @@ namespace ConsoleApp1
             string a = "[*]";
             for (int i=0; i<n; i++)
             {
+                for(int j=0; j<n)
                 Console.WriteLine(a+" ");
                 
                 Console.WriteLine("");

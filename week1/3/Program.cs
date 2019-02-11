@@ -17,7 +17,7 @@ namespace _3
             foreach (var x in arr)
             {
                 int y = int.Parse(x);
-                res = res  + " "+x+  " " +x;
+                res = res + " "+x+  " " +x;
 
             }
             Console.WriteLine(res);
