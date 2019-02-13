@@ -11,22 +11,36 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            string[] texts = File.ReadAllLines("file.txt"); //приравниваем строковой массив"texts" на то что внутри файла
-            foreach (string text in texts) //для каждой строки названной "text" в массиве "texts"
+            FileStream fs = new FileStream("file.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            string line = sr.ReadLine();
+            //string[] arr = line.Split();
+            bool b;
+            b = true;
+            for (int i = 0; i < line.Length / 2; i++)
             {
-                string[] arr = text.Split(); // строку "text" приравниваем на массив и отделяем каждый элемент
-                for (int i = 0; i < arr.Length / 2; i++) // пробегаемся по форику до элемента ровно по середине 
+
+                if (line[i] != line[line.Length - i - 1])
                 {
-                    if (arr[i] != arr[arr.Length - i - 1]) // если зеркальные элементы не ровны
-                    {
-                        Console.WriteLine("No"); // то, выводим "No"
-                        break;
-                    }
+
+                    b = false;
                 }
-                Console.WriteLine("Yes"); //если все элементы обходят услофия то это палиндром
 
             }
+            if (b)
+                Console.WriteLine("Yes");
+
+            if (b == false)
+            {
+                Console.WriteLine("No");
+
+            }
+            sr.Close();
+            fs.Close();
             Console.ReadKey();
         }
+        
+        }
     }
-}
+
+

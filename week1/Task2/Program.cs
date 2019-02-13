@@ -8,10 +8,10 @@ namespace Task2
 {
     class Student // creating new class
     {
-        public string Name;
-        public int id;
+        public string Name; //new 3 variables for 
+        public int id; 
         public int year;
-        public Student(string n, int i, int y) //
+        public Student(string n,int i, int y) //
         {
             Name = n;
             id = i;
