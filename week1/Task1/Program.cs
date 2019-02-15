@@ -12,13 +12,16 @@ namespace Task1
         {
             int n = int.Parse(Console.ReadLine()); // reading first line as number and make equal to new int variable n
             string line = Console.ReadLine();      //reading second line and make equal to new string variable line
+
             string[] str = new string[n];               //creating new string array str and give the value n as number of elements in this array
             int[] int1 = new int[n];                    //creating new int array int1 and give the value n as number of elements in this array
+
             str = line.Split();                               //making equal string array str to string line, in array elements are divided by " "
             for (int i = 0; i < n; i++)
             {
                 int1[i] = int.Parse(str[i]); // converting elements as numbers from array str, and making equal to the int array "int1"
             }
+
             bool b;    //creating new boolean variable
             int count = 0; // creating new epmty variable
             string res = ""; // empty string for result string

@@ -6,41 +6,31 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    class Student // creating new class
+    class Student
     {
-        public string Name; //new 3 variables for 
-        public int id; 
-        public int year;
-        public Student(string n,int i, int y) //
+        public string name; //3 variables in the class student
+        public string id;
+        public string year;
+        public Student() //constructor
         {
-            Name = n;
-            id = i;
-            year = y;
+            name = Console.ReadLine(); //enter name
+            id = Console.ReadLine(); //enter id
+            year = Console.ReadLine(); //enter year
         }
-        public void Info() // the function prints data by 3 value
+        public void Info()
         {
-            Console.WriteLine(Name + " " + id + " " + year);
-        }
-        public void Increment() // +1 to the year
-        {
-            year++;
+            int Year = int.Parse(year); //convert to int
+            Console.WriteLine($"Name: {name} ID: {id} Year: {Year}"); //prints as an example (Name: Saule ID: 18BD110362 Year:2018 )
+            Year++; //increment
+            Console.WriteLine($"Name: {name} ID: {id} Year: {Year}"); //prints as an example (Name: Saule ID: 18BD110362 Year:2019 )
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            string Name = Console.ReadLine(); // inputing line as student's name
-            string id1 = Console.ReadLine(); // inp line as student's id
-            int id = int.Parse(id1); // converting string id to the number
-            string year1 = Console.ReadLine();  //inp line as student's year
-            int year = int.Parse(year1); // year string>int
-
-            Student S = new Student(Name, id, year); // calling to class with entered data
-            S.Info(); // calling to Info function
-            S.Increment(); // calling to Increment function
-            S.Info(); // calling to Info Function
-            Console.ReadKey();
+            Student s = new Student();
+            s.Info();
         }
     }
-}
+    }
