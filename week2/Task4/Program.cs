@@ -11,18 +11,17 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Write text");
+            string name = "text.txt";                           //name of file
+            string where1 = @"C:\Users\Saule\Desktop\test";      //first path of created file
+            string where2 = @"C:\Users\Saule\Desktop\pp2\test2"; //second path where will be copied
 
-            string text = Console.ReadLine();
-            File.WriteAllText("path.txt", text);
-            string a = File.ReadAllText("path.txt");
-            File.WriteAllText("path1.txt", a);
-            int b = int.Parse(Console.ReadLine());
-            Console.WriteLine("tap 1 to continue");
-            if (b==1)
-            {
-                File.Delete("path.txt");
-            }
+            string file1 = Path.Combine(where1, name); // final first source
+            string file2 = Path.Combine(where2, name); //final second source
+
+            FileStream fs = File.Create(file1); //create first file
+            fs.Close();
+            File.Copy(file1, file2, true); //copy file1 to file2
+            File.Delete(file1); //delete first file
             Console.ReadKey();
         }
     }

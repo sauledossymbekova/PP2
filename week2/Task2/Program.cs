@@ -11,11 +11,11 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            string[] texts = File.ReadAllLines("file.txt");        //приравниваем строковой массив"texts" на то что внутри файла
+            string[] texts = File.ReadAllLines("input.txt");        //приравниваем строковой массив"texts" на то что внутри файла
             foreach (string text in texts)                         //для каждой строки названной "text" в массиве "texts"
             {
                 string[] arr = text.Split();                       // строку "text" приравниваем на массив и отделяем каждый элементy
-                int k = 0;                                         // epmty value for counting number of prime numbers
+                                          
             string res = "";                                       // empty string for result string
             bool b;
             foreach (var x in arr)                                 // running to each element of array            
@@ -33,15 +33,14 @@ namespace Task2
                 }
                 if (b)                                             // if there are numbers well gone through algor. so it is prime 
                 {
-                    k++;                                           // counts +1
                     res = res + " " + x;                           // will add prime numbers in empty string
 
                 }
             }
-            Console.WriteLine(k);
-            Console.WriteLine(res);
-                File.WriteAllText("file1.txt", res);
-                Console.WriteLine("DONE");
+            
+                File.Create("output.txt"); //create new file
+                File.WriteAllText("output.txt", res); // save string into file
+                Console.WriteLine("DONE"); // prosto
 
             }
             Console.ReadKey();
